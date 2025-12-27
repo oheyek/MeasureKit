@@ -1,0 +1,7 @@
+[project]
+name = "MeasureKit"
+version = "0.1.0"
+description = "Convert any unit in the blink of an eye. Simple, fast, and accurate - all in one place."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
