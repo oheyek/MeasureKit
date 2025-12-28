@@ -1,20 +1,19 @@
 {% extends "base.html" %} {% block head %} {% endblock %} {% block body %}
 <div id="main-container">
     <h1>MeasureKit</h1>
-    <h2>Select unit category:</h2>
-    <div id="category-buttons">
-        <div id="temperature-button"><button type="button">TEMPERATURE</button></div>
-        <div id="length-button"><button type="button">LENGTH</button>
+    <h2>SELECT UNITS CATEGORY:</h2>
+<div id="category-buttons">
+    <form method="post" action="/">
+        <div id="temperature-button">
+            <button name="action" value="temperature" type="submit">TEMPERATURE</button>
         </div>
-        <div id="weigth-button"><button type="button">WEIGTH</button>
+        <div id="length-button">
+            <button name="action" value="length" type="submit">LENGTH</button>
         </div>
-    </div>
+        <div id="weight-button">
+            <button name="action" value="weight" type="submit">WEIGHT</button>
+        </div>
+    </form>
 </div>
-<footer id="credits">
-    <span class="left">
-    MADE WITH ❤️ BY <a href="https://buymeacoffee.com/ohey">OHEY</a><br />
-    PROJECT
-    <a href="">GITHUB</a>
-  </span>
-</footer>
+</div>
 {% endblock %}

@@ -35,11 +35,13 @@ body {
   font-size: 36px;
   margin-bottom: 15px;
   color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #main-container h2 {
   margin-bottom: 15px;
   color: #3d84aa;
+  text-shadow: 1px 1px 2px rgba(61, 132, 170, 0.4);
 }
 
 #category-buttons button {
@@ -63,6 +65,8 @@ body {
   color: #fff;
   border-color: #34c5b4;
   outline: none;
+  font-weight: 700;
+  transition: 0.3s ease;
 }
 
 #category-buttons button:active {
@@ -78,6 +82,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 500;
 }
 
 #credits a {
@@ -87,6 +92,7 @@ body {
 
 #credits a:hover {
   color: #34c5b4;
+  transition: all 0.5s ease;
 }
 
 #credits .right {
