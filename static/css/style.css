@@ -1,35 +1,60 @@
 * {
   font-family: "Google Sans", sans-serif;
-  font-weight: 600;
-  color: #222;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: #fefefe;
-}
-
-#category-message {
-  margin-bottom: 20px;
-  color: #3d84aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-position: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, #b7e0b9 0%, transparent 40%),
+    radial-gradient(circle at bottom right, #34c5b4 0%, transparent 45%),
+    linear-gradient(135deg, #fefefe 0%, #eaf6f4 100%);
+  background-attachment: fixed;
 }
 
 #main-container {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
+  text-align: center;
+  width: 350px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px 0px;
+}
+
+#main-container h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+#main-container h2 {
+  margin-bottom: 15px;
+  color: #3d84aa;
 }
 
 #category-buttons button {
-  width: 150px;
-  height: 50px;
-  margin: 10px;
-  border: 2px solid #3d84aa;
-  border-radius: 6px;
-  box-sizing: border-box;
-  background: #b7e0b9;
-  color: #222;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: 1px dashed lightslategrey;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 #category-buttons button:hover,
@@ -38,6 +63,10 @@ body {
   color: #fff;
   border-color: #34c5b4;
   outline: none;
+}
+
+#category-buttons button:active {
+  transform: scale(0.98);
 }
 
 #credits {
@@ -49,7 +78,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fefefe;
 }
 
 #credits a {
@@ -63,4 +91,10 @@ body {
 
 #credits .right {
   font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  #main-container {
+    flex-direction: column;
+  }
 }
