@@ -18,7 +18,7 @@ def main():
 
 @app.route("/temperature")
 def temperature():
-    return "<p>temperature endpoint</p>"
+    return render_template("temperature.html")
 
 
 @app.route("/length")
