@@ -23,7 +23,7 @@ def temperature():
 
 @app.route("/length")
 def length():
-    return "<p>length endpoint</p>"
+    return render_template("length.html")
 
 
 @app.route("/weight")
