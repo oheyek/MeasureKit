@@ -1,26 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MeasureKit | Precision in every measure</title>
-    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/icon.ico') }}">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet" /> {% block head %}{% endblock %}
-</head>
-
-<body>
-    {% block body %} {% endblock %}
-    <footer id="credits">
-        <span class="left">
-    MADE WITH ❤️ BY <a href="https://buymeacoffee.com/ohey">OHEY</a><br />
-    PROJECT
-    <a href="">GITHUB</a>
-  </span>
-    </footer>
-</body>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description"
+              content="Measure Kit is a simple web-based unit converter that allows users to convert between length, weight, and temperature units. Easily input values, select units, and instantly view accurate conversions using a clean and user-friendly interface.">
+        <meta name="keywords"
+              content="measure kit, unit converter, measurement converter, length converter, weight converter, temperature converter, unit conversion tool, convert units online, length units, weight units, temperature units, millimeter to meter, kilometer to mile, gram to kilogram, pound to kilogram, celsius to fahrenheit, fahrenheit to celsius, kelvin converter, web unit converter, measurement calculator, conversion web app">
+        <title>MeasureKit | Precision in every measure</title>
+        <link rel="icon"
+              type="image/x-icon"
+              href="{{ url_for('static', filename='img/icon.ico') }}">
+        <link href="{{ url_for('static', filename='css/style.css') }}"
+              rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+              rel="stylesheet" />
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <footer id="credits">
+            <span class="left">
+                MADE WITH ❤️ BY <a href="https://buymeacoffee.com/ohey">OHEY</a>
+                <br />
+                PROJECT
+                <a href="">GITHUB</a>
+            </span>
+        </footer>
+    </body>
 </html>
