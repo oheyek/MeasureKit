@@ -28,7 +28,7 @@ def length():
 
 @app.route("/weight")
 def weight():
-    return "<p>weight endpoint</p>"
+    return render_template("weight.html")
 
 
 if __name__ == "__main__":
