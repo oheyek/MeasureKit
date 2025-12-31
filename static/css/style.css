@@ -43,6 +43,11 @@ body {
   color: #3d84aa;
   text-shadow: 1px 1px 2px rgba(61, 132, 170, 0.4);
 }
+#convert-inputs h3 {
+  margin-bottom: 15px;
+  color: #3d84aa;
+  text-shadow: 1px 1px 2px rgba(61, 132, 170, 0.4);
+}
 
 #category-buttons button {
   width: 100%;
@@ -73,6 +78,68 @@ body {
   transform: scale(0.98);
 }
 
+#convert-inputs input {
+  text-align: center;
+  color: #333;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: 1px dashed lightslategrey;
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#convert-inputs select {
+  text-align: center;
+  color: #333;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: 1px dashed lightslategrey;
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+#convert-inputs button {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: 1px dashed lightslategrey;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#convert-inputs button:hover,
+#convert-inputs button:focus {
+  background: #34c5b4;
+  color: #fff;
+  border-color: #34c5b4;
+  outline: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+#convert-inputs button:active {
+  transform: scale(0.98);
+}
+
 #credits {
   position: fixed;
   left: 0;
@@ -85,12 +152,17 @@ body {
   font-weight: 500;
 }
 
-#credits a {
+p {
+  color: #3d84aa;
+  font-weight: 600;
+}
+
+a {
   color: #3d84aa;
   text-decoration: none;
 }
 
-#credits a:hover {
+a:hover {
   color: #34c5b4;
   transition: all 0.5s ease;
 }
