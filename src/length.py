@@ -5,7 +5,7 @@ class Length(Unit):
     pass
 
 
-class Milimeter(Length):
+class Millimeter(Length):
     def to_base(self, value: float) -> float:
         return value * 0.001
 
@@ -63,7 +63,7 @@ class Yard(Length):
 
 class Mile(Length):
     def to_base(self, value: float) -> float:
-        return value * 1609.34
+        return value * 1609.344
 
     def from_base(self, value: float) -> float:
-        return value / 1609.34
+        return value / 1609.344

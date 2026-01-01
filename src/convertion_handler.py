@@ -60,7 +60,7 @@ def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -
 
     elif category == "length":
         unit_symbols: dict[str, str] = {
-            "milimeter": "mm",
+            "millimeter": "mm",
             "centimeter": "cm",
             "meter": "m",
             "kilometer": "km",
