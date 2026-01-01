@@ -5,6 +5,28 @@ import src.length
 import src.weight
 
 
+UNITS = (
+    "millimeter",
+    "centimeter",
+    "meter",
+    "kilometer",
+    "inch",
+    "foot",
+    "yard",
+    "mile",
+    "milligram",
+    "gram",
+    "kilogram",
+    "ounce",
+    "pound",
+    "celsius",
+    "fahrenheit",
+    "kelvin",
+)
+
+CATEGORIES = ("temperature", "length", "weight")
+
+
 def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -> str:
     if not value or not unit_from or not unit_to:
         return "All fields are required."
@@ -15,6 +37,12 @@ def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -
 
     if unit_from.lower() == unit_to.lower():
         return "You cannot convert the same units."
+
+    if unit_from.lower() not in UNITS or unit_to.lower() not in UNITS:
+        return "Unsupported unit."
+
+    if category not in CATEGORIES:
+        return "Invalid category."
 
     if category == "temperature":
         unit_symbols: dict[str, str] = {
