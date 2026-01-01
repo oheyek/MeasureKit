@@ -1,3 +1,7 @@
+"""
+@brief Module for handling unit conversions.
+"""
+
 from typing import Any
 
 import src.temperatures
@@ -28,6 +32,15 @@ CATEGORIES = ("temperature", "length", "weight")
 
 
 def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -> str:
+    """
+    @brief Handle unit conversion based on input parameters.
+
+    @param value The value to convert as a string.
+    @param unit_from The source unit.
+    @param unit_to The target unit.
+    @param category The category of units (temperature, length, weight).
+    @return The converted value with unit symbol as a string, or an error message.
+    """
     if not value or not unit_from or not unit_to:
         return "All fields are required."
     try:
