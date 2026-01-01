@@ -31,15 +31,15 @@ class Kilogram(Weight):
 
 class Ounce(Weight):
     def to_base(self, value: float) -> float:
-        return value / 28.3495
+        return value * 28.3495
 
     def from_base(self, value: float) -> float:
-        return value * 28.3495
+        return value / 28.3495
 
 
 class Pound(Weight):
     def to_base(self, value: float) -> float:
-        return value / 453.592
+        return value * 453.592
 
     def from_base(self, value: float) -> float:
-        return value * 453.592
+        return value / 453.592
