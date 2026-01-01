@@ -7,7 +7,7 @@
         <div id="convert-inputs">
             <form method="post" action="/length">
                 <input type="number"
-                       name="value-to-covert"
+                       name="value-to-convert"
                        id="value-to-covert"
                        placeholder="Enter the value to covert">
             </input>
@@ -35,9 +35,7 @@
             </select>
             <button name="action" value="convert" type="submit">CONVERT</button>
         </form>
-        <p>
-            Result placeholder <span id="result">—</span>
-        </p>
+        {% if result is not none %}<p>Result: {{ result }}</p>{% endif %}
         <br>
         <a href="{{ url_for("main") }}">Go to Home</a>
     </div>

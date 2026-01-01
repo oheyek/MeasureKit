@@ -7,17 +7,18 @@
         <div id="convert-inputs">
             <form method="post" action="/temperature">
                 <input type="number"
-                       name="value-to-covert"
+                       name="value-to-convert"
                        id="value-to-covert"
-                       placeholder="Enter the value to covert">
+                       placeholder="Enter the value to covert"
+                       required>
             </input>
-            <select name="unit-select-1" id="unit-select-1">
+            <select name="unit-select-1" id="unit-select-1" required>
                 <option value="" disabled selected hidden>Unit to convert from</option>
                 <option value="celsius">Celsius</option>
                 <option value="fahrenheit">Fahrenheit</option>
                 <option value="kelvin">Kelvin</option>
             </select>
-            <select name="unit-select-2" id="unit-select-2">
+            <select name="unit-select-2" id="unit-select-2" required>
                 <option value="" disabled selected hidden>Unit to convert to</option>
                 <option value="celsius">Celsius</option>
                 <option value="fahrenheit">Fahrenheit</option>
@@ -25,9 +26,7 @@
             </select>
             <button name="action" value="convert" type="submit">CONVERT</button>
         </form>
-        <p>
-            Result placeholder <span id="result">—</span>
-        </p>
+        {% if result is not none %}<p>Result: {{ result }}</p>{% endif %}
         <br>
         <a href="{{ url_for("main") }}">Go to Home</a>
     </div>
