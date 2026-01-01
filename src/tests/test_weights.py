@@ -1,8 +1,14 @@
-import pytest
+"""
+@brief Tests for weight unit conversions.
+"""
+
 import src.convertion_handler
 
 
 def test_milligram() -> None:
+    """
+    @brief Test milligram conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("1000", "milligram", "gram", "weight")
         == "1.0000 g"
@@ -24,6 +30,9 @@ def test_milligram() -> None:
 
 
 def test_gram() -> None:
+    """
+    @brief Test gram conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("1000", "gram", "milligram", "weight")
         == "1000000.0000 mg"
@@ -43,6 +52,9 @@ def test_gram() -> None:
 
 
 def test_kilogram() -> None:
+    """
+    @brief Test kilogram conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("1", "kilogram", "milligram", "weight")
         == "1000000.0000 mg"
@@ -62,6 +74,9 @@ def test_kilogram() -> None:
 
 
 def test_ounce() -> None:
+    """
+    @brief Test ounce conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("16", "ounce", "milligram", "weight")
         == "453592.3700 mg"
@@ -81,6 +96,9 @@ def test_ounce() -> None:
 
 
 def test_pound() -> None:
+    """
+    @brief Test pound conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("1", "pound", "milligram", "weight")
         == "453592.3700 mg"
@@ -100,6 +118,9 @@ def test_pound() -> None:
 
 
 def test_empty_fields() -> None:
+    """
+    @brief Test handling of empty fields.
+    """
     assert (
         src.convertion_handler.handle_convertion("", "gram", "kilogram", "weight")
         == "All fields are required."
@@ -115,6 +136,9 @@ def test_empty_fields() -> None:
 
 
 def test_invalid_number() -> None:
+    """
+    @brief Test handling of invalid number input.
+    """
     assert (
         src.convertion_handler.handle_convertion("abc", "gram", "kilogram", "weight")
         == "Value must be a number."
@@ -122,6 +146,9 @@ def test_invalid_number() -> None:
 
 
 def test_same_units() -> None:
+    """
+    @brief Test handling of same unit conversion.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "gram", "gram", "weight")
         == "You cannot convert the same units."
@@ -129,6 +156,9 @@ def test_same_units() -> None:
 
 
 def test_unsupported_units() -> None:
+    """
+    @brief Test handling of unsupported units.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "stone", "kilogram", "weight")
         == "Unsupported unit."
@@ -140,6 +170,9 @@ def test_unsupported_units() -> None:
 
 
 def test_invalid_category() -> None:
+    """
+    @brief Test handling of invalid category.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "gram", "kilogram", "speed")
         == "Invalid category."
@@ -147,6 +180,9 @@ def test_invalid_category() -> None:
 
 
 def test_units_not_matching_category() -> None:
+    """
+    @brief Test handling of units not matching category.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "gram", "celsius", "weight")
         == "Invalid unit selection."

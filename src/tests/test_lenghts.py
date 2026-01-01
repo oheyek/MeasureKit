@@ -1,8 +1,14 @@
-import pytest
+"""
+@brief Tests for length unit conversions.
+"""
+
 import src.convertion_handler
 
 
 def test_millimeter() -> None:
+    """
+    @brief Test millimeter conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "1000", "millimeter", "centimeter", "length"
@@ -40,6 +46,9 @@ def test_millimeter() -> None:
 
 
 def test_centimeter() -> None:
+    """
+    @brief Test centimeter conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "100", "centimeter", "millimeter", "length"
@@ -75,6 +84,9 @@ def test_centimeter() -> None:
 
 
 def test_meter() -> None:
+    """
+    @brief Test meter conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("1", "meter", "millimeter", "length")
         == "1000.0000 mm"
@@ -106,6 +118,9 @@ def test_meter() -> None:
 
 
 def test_kilometer() -> None:
+    """
+    @brief Test kilometer conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "1", "kilometer", "millimeter", "length"
@@ -141,6 +156,9 @@ def test_kilometer() -> None:
 
 
 def test_inch() -> None:
+    """
+    @brief Test inch conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("12", "inch", "millimeter", "length")
         == "304.8000 mm"
@@ -172,6 +190,9 @@ def test_inch() -> None:
 
 
 def test_foot() -> None:
+    """
+    @brief Test foot conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("3", "foot", "millimeter", "length")
         == "914.4000 mm"
@@ -203,6 +224,9 @@ def test_foot() -> None:
 
 
 def test_yard() -> None:
+    """
+    @brief Test yard conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("3", "yard", "millimeter", "length")
         == "2743.2000 mm"
@@ -234,6 +258,9 @@ def test_yard() -> None:
 
 
 def test_mile() -> None:
+    """
+    @brief Test mile conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion("1", "mile", "millimeter", "length")
         == "1609344.0000 mm"
@@ -265,6 +292,9 @@ def test_mile() -> None:
 
 
 def test_empty_fields() -> None:
+    """
+    @brief Test handling of empty fields.
+    """
     assert (
         src.convertion_handler.handle_convertion("", "meter", "kilometer", "length")
         == "All fields are required."
@@ -280,6 +310,9 @@ def test_empty_fields() -> None:
 
 
 def test_invalid_number() -> None:
+    """
+    @brief Test handling of invalid number input.
+    """
     assert (
         src.convertion_handler.handle_convertion("abc", "meter", "kilometer", "length")
         == "Value must be a number."
@@ -287,6 +320,9 @@ def test_invalid_number() -> None:
 
 
 def test_same_units() -> None:
+    """
+    @brief Test handling of same unit conversion.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "meter", "meter", "length")
         == "You cannot convert the same units."
@@ -294,6 +330,9 @@ def test_same_units() -> None:
 
 
 def test_unsupported_units() -> None:
+    """
+    @brief Test handling of unsupported units.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "smoot", "kilometer", "length")
         == "Unsupported unit."
@@ -305,6 +344,9 @@ def test_unsupported_units() -> None:
 
 
 def test_invalid_category() -> None:
+    """
+    @brief Test handling of invalid category.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "meter", "kilometer", "speed")
         == "Invalid category."
@@ -312,6 +354,9 @@ def test_invalid_category() -> None:
 
 
 def test_units_not_matching_category() -> None:
+    """
+    @brief Test handling of units not matching category.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "meter", "celsius", "length")
         == "Invalid unit selection."

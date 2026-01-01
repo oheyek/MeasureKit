@@ -1,8 +1,14 @@
-import pytest
+"""
+@brief Tests for temperature unit conversions.
+"""
+
 import src.convertion_handler
 
 
 def test_celsius() -> None:
+    """
+    @brief Test Celsius conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "10", "celsius", "fahrenheit", "temperature"
@@ -18,6 +24,9 @@ def test_celsius() -> None:
 
 
 def test_fahrenheit() -> None:
+    """
+    @brief Test Fahrenheit conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "50", "fahrenheit", "celsius", "temperature"
@@ -33,6 +42,9 @@ def test_fahrenheit() -> None:
 
 
 def test_kelvin() -> None:
+    """
+    @brief Test Kelvin conversions.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "283.15", "kelvin", "celsius", "temperature"
@@ -48,6 +60,9 @@ def test_kelvin() -> None:
 
 
 def test_empty_fields() -> None:
+    """
+    @brief Test handling of empty fields.
+    """
     assert (
         src.convertion_handler.handle_convertion("", "celsius", "kelvin", "temperature")
         == "All fields are required."
@@ -63,6 +78,9 @@ def test_empty_fields() -> None:
 
 
 def test_invalid_number() -> None:
+    """
+    @brief Test handling of invalid number input.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "abc", "celsius", "kelvin", "temperature"
@@ -72,6 +90,9 @@ def test_invalid_number() -> None:
 
 
 def test_same_units() -> None:
+    """
+    @brief Test handling of same unit conversion.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "10", "celsius", "celsius", "temperature"
@@ -81,6 +102,9 @@ def test_same_units() -> None:
 
 
 def test_unsupported_units() -> None:
+    """
+    @brief Test handling of unsupported units.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "10", "celsius", "lightyear", "temperature"
@@ -94,6 +118,9 @@ def test_unsupported_units() -> None:
 
 
 def test_invalid_category() -> None:
+    """
+    @brief Test handling of invalid category.
+    """
     assert (
         src.convertion_handler.handle_convertion("10", "celsius", "kelvin", "speed")
         == "Invalid category."
@@ -105,6 +132,9 @@ def test_invalid_category() -> None:
 
 
 def test_units_not_matching_category() -> None:
+    """
+    @brief Test handling of units not matching category.
+    """
     assert (
         src.convertion_handler.handle_convertion(
             "10", "celsius", "meter", "temperature"
