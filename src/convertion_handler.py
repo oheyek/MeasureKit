@@ -79,7 +79,7 @@ def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -
 
     else:
         unit_symbols: dict[str, str] = {
-            "miligram": "mg",
+            "milligram": "mg",
             "gram": "g",
             "kilogram": "kg",
             "ounce": "oz",

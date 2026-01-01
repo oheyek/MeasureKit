@@ -5,7 +5,7 @@ class Weight(Unit):
     pass
 
 
-class Miligram(Weight):
+class Milligram(Weight):
     def to_base(self, value: float) -> float:
         return value * 0.001
 
@@ -31,15 +31,15 @@ class Kilogram(Weight):
 
 class Ounce(Weight):
     def to_base(self, value: float) -> float:
-        return value * 28.3495
+        return value * 28.349523125
 
     def from_base(self, value: float) -> float:
-        return value / 28.3495
+        return value / 28.349523125
 
 
 class Pound(Weight):
     def to_base(self, value: float) -> float:
-        return value * 453.592
+        return value * 453.59237
 
     def from_base(self, value: float) -> float:
-        return value / 453.592
+        return value / 453.59237
