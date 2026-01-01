@@ -1,4 +1,4 @@
-from base import Unit
+from src.base import Unit
 
 
 class Length(Unit):
@@ -31,10 +31,10 @@ class Meter(Length):
 
 class Kilometer(Length):
     def to_base(self, value: float) -> float:
-        return value / 1000
+        return value * 1000
 
     def from_base(self, value: float) -> float:
-        return value * 1000
+        return value / 1000
 
 
 class Inch(Length):

@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, request, url_for
 import src.temperatures
 import src.weight
+import src.length
 
 app = Flask(__name__)
 
@@ -49,9 +50,44 @@ def temperature():
     return render_template("temperature.html", result=None)
 
 
-@app.route("/length")
+@app.route("/length", methods=["GET", "POST"])
 def length():
-    return render_template("length.html")
+    if request.method == "POST":
+        value_str = request.form.get("value-to-convert")
+        unit_from = request.form.get("unit-select-1")
+        unit_to = request.form.get("unit-select-2")
+        if not value_str or not unit_from or not unit_to:
+            return "All fields are required."
+        try:
+            value_to_convert = float(value_str)
+        except ValueError:
+            return "Value must be a number."
+        try:
+            convert_from_unit = getattr(src.length, unit_from.capitalize())
+            convert_to_unit = getattr(src.length, unit_to.capitalize())
+        except AttributeError:
+            return "Invalid unit selection."
+        if unit_from.lower() == unit_to.lower():
+            result = "You cannot convert the same units."
+        else:
+            result_value = convert_from_unit().convert_to(
+                value_to_convert, convert_to_unit()
+            )
+            unit_symbols = {
+                "milimeter": "mm",
+                "centimeter": "cm",
+                "meter": "m",
+                "kilometer": "km",
+                "inch": "in",
+                "foot": "ft",
+                "yard": "yd",
+                "mile": "mi",
+            }
+            unit_symbol = unit_symbols.get(unit_to.lower(), unit_to)
+            result = f"{result_value:.2f} {unit_symbol}"
+        return render_template("length.html", result=result)
+
+    return render_template("length.html", result=None)
 
 
 @app.route("/weight", methods=["GET", "POST"])
