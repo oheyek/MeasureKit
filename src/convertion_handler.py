@@ -1,3 +1,7 @@
+"""
+@brief Module for handling unit conversions.
+"""
+
 from typing import Any
 
 import src.temperatures
@@ -5,7 +9,38 @@ import src.length
 import src.weight
 
 
+UNITS = (
+    "millimeter",
+    "centimeter",
+    "meter",
+    "kilometer",
+    "inch",
+    "foot",
+    "yard",
+    "mile",
+    "milligram",
+    "gram",
+    "kilogram",
+    "ounce",
+    "pound",
+    "celsius",
+    "fahrenheit",
+    "kelvin",
+)
+
+CATEGORIES = ("temperature", "length", "weight")
+
+
 def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -> str:
+    """
+    @brief Handle unit conversion based on input parameters.
+
+    @param value The value to convert as a string.
+    @param unit_from The source unit.
+    @param unit_to The target unit.
+    @param category The category of units (temperature, length, weight).
+    @return The converted value with unit symbol as a string, or an error message.
+    """
     if not value or not unit_from or not unit_to:
         return "All fields are required."
     try:
@@ -15,6 +50,12 @@ def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -
 
     if unit_from.lower() == unit_to.lower():
         return "You cannot convert the same units."
+
+    if unit_from.lower() not in UNITS or unit_to.lower() not in UNITS:
+        return "Unsupported unit."
+
+    if category not in CATEGORIES:
+        return "Invalid category."
 
     if category == "temperature":
         unit_symbols: dict[str, str] = {
@@ -32,7 +73,7 @@ def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -
 
     elif category == "length":
         unit_symbols: dict[str, str] = {
-            "milimeter": "mm",
+            "millimeter": "mm",
             "centimeter": "cm",
             "meter": "m",
             "kilometer": "km",
@@ -51,7 +92,7 @@ def handle_convertion(value: str, unit_from: str, unit_to: str, category: str) -
 
     else:
         unit_symbols: dict[str, str] = {
-            "miligram": "mg",
+            "milligram": "mg",
             "gram": "g",
             "kilogram": "kg",
             "ounce": "oz",

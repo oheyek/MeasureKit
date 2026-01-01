@@ -1,3 +1,7 @@
+"""
+@brief Flask application for unit conversions.
+"""
+
 from flask import Flask, redirect, render_template, request, url_for
 import src.convertion_handler
 
@@ -6,6 +10,11 @@ app: Flask = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def main():
+    """
+    @brief Main route handler for the application.
+
+    @return Rendered template or redirect.
+    """
     if request.method == "POST":
         action: str = request.form["action"]
         if action == "temperature":
@@ -19,6 +28,11 @@ def main():
 
 @app.route("/temperature", methods=["GET", "POST"])
 def temperature():
+    """
+    @brief Handle temperature conversion page.
+
+    @return Rendered temperature template with result.
+    """
     if request.method == "POST":
         value_str: str = request.form.get("value-to-convert") or ""
         unit_from: str = request.form.get("unit-select-1") or ""
@@ -33,6 +47,11 @@ def temperature():
 
 @app.route("/length", methods=["GET", "POST"])
 def length():
+    """
+    @brief Handle length conversion page.
+
+    @return Rendered length template with result.
+    """
     if request.method == "POST":
         value_str: str = request.form.get("value-to-convert") or ""
         unit_from: str = request.form.get("unit-select-1") or ""
@@ -47,6 +66,11 @@ def length():
 
 @app.route("/weight", methods=["GET", "POST"])
 def weight():
+    """
+    @brief Handle weight conversion page.
+
+    @return Rendered weight template with result.
+    """
     if request.method == "POST":
         value_str: str = request.form.get("value-to-convert") or ""
         unit_from: str = request.form.get("unit-select-1") or ""
