@@ -7,18 +7,18 @@ class Length(Unit):
 
 class Milimeter(Length):
     def to_base(self, value: float) -> float:
-        return value / 0.001
+        return value * 0.001
 
     def from_base(self, value: float) -> float:
-        return value * 0.001
+        return value / 0.001
 
 
 class Centimeter(Length):
     def to_base(self, value: float) -> float:
-        return value / 0.01
+        return value * 0.01
 
     def from_base(self, value: float) -> float:
-        return value * 0.01
+        return value / 0.01
 
 
 class Meter(Length):
@@ -39,31 +39,31 @@ class Kilometer(Length):
 
 class Inch(Length):
     def to_base(self, value: float) -> float:
-        return value / 0.0254
+        return value * 0.0254
 
     def from_base(self, value: float) -> float:
-        return value * 0.0254
+        return value / 0.0254
 
 
 class Foot(Length):
     def to_base(self, value: float) -> float:
-        return value / 0.3048
+        return value * 0.3048
 
     def from_base(self, value: float) -> float:
-        return value * 0.3048
+        return value / 0.3048
 
 
 class Yard(Length):
     def to_base(self, value: float) -> float:
-        return value / 0.9144
+        return value * 0.9144
 
     def from_base(self, value: float) -> float:
-        return value * 0.9144
+        return value / 0.9144
 
 
 class Mile(Length):
     def to_base(self, value: float) -> float:
-        return value / 1609.34
+        return value * 1609.34
 
     def from_base(self, value: float) -> float:
-        return value * 1609.34
+        return value / 1609.34
