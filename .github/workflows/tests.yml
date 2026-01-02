@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies & test tools
         run: |
           uv run pip install -r requirements.txt
-          uv run pip install pytest pytest-cov
+          uv run pip install pytest
 
-      - name: Run tests with coverage
-        run: uv run pytest src/tests/ -v --tb=short --cov=src --cov-report=term-missing
+      - name: Run tests
+        run: uv run pytest src/tests/ -v --tb=short
