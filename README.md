@@ -3,8 +3,6 @@
 ![Python Version](https://img.shields.io/badge/python-3.14%2B-blue?logo=python&logoColor=white)
 [![License](https://img.shields.io/github/license/oheyek/MeasureKit?color=green)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-lightgrey)
-[![Release](https://img.shields.io/github/v/release/oheyek/MeasureKit?include_prereleases)](https://github.com/oheyek/MeasureKit/releases)
-[![Downloads](https://img.shields.io/github/downloads/oheyek/MeasureKit/total?color=orange)](https://github.com/oheyek/MeasureKit/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/oheyek/measure-kit)](https://hub.docker.com/r/oheyek/measure-kit)
 [![Documentation](https://img.shields.io/badge/docs-github.io-blue)](https://oheyek.github.io/MeasureKit/)
 [![Live Demo](https://img.shields.io/badge/live-demo-brightgreen)](https://measure-kit-latest.onrender.com/)
